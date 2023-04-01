@@ -1,26 +1,34 @@
-package com.tutorial.players;
+package com.tutorial.players.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="player")
 public class Player {
-
-    private int ID;
+    @Id
+    @GeneratedValue
+    private Long ID;
     private String nome;
     private String cognome;
     private String squadra;
 
     public Player(){};
 
-    public Player(int ID, String nome, String cognome, String squadra){
+    public Player(Long ID, String nome, String cognome, String squadra){
         this.ID = ID;
         this.nome = nome;
         this.cognome = cognome;
         this.squadra = squadra;
     }
 
-    public int getID(){
+    public long getID(){
         return ID;
     }
 
-    public void setID(int ID){
+    public void setID(Long ID){
         this.ID = ID;
     }
 
