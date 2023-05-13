@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class PlayersController {
     @Autowired
-    private PlayerServiceMock playerService;
+    private PlayerServiceDB playerService;
     @GetMapping("/players")
     public List<Player> getAllPlayers(){
         return playerService.getAllPlayers();

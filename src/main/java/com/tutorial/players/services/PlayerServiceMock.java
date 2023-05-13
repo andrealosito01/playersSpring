@@ -31,9 +31,12 @@ public class PlayerServiceMock implements PlayerService{
     }
 
     public void updatePlayer(Long id, Player p){
-        for (Player pl:players) {
-            if(pl.getID() == id)
-                pl = p;
+        for(int i=0; i< players.size(); i++){
+            Player player = players.get(i);
+            if(player.getID() == p.getID()) {
+                players.set(i, p);
+                return;
+            }
         }
     }
 

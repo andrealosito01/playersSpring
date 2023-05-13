@@ -25,11 +25,11 @@ public class PlayerServiceDB implements PlayerService{
     }
 
     public void addPlayer(Player player) {
-        playerRepository.save(player);
+        playerRepository.saveAndFlush(player);
     }
 
     public void updatePlayer(Long id, Player player) {
-        playerRepository.save(player);
+        playerRepository.saveAndFlush(player);
     }
 
     public void deletePlayer(Long id) {
