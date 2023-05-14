@@ -7,13 +7,12 @@ import jakarta.persistence.*;
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long ID;
     private String nome;
     private String cognome;
     private String squadra;
 
-    public Player(){};
+    public Player(){}
 
     public Player(Long ID, String nome, String cognome, String squadra){
         this.ID = ID;
