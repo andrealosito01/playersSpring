@@ -26,10 +26,7 @@ public class PlayerServiceDB implements PlayerService{
     @Cacheable("players")
     public Player getPlayer(Long id) {
         Optional<Player> player = playerRepository.findById(id);
-        if(player.isPresent())
-            return player.get();
-        else
-            return null;
+        return player.orElse(null);
     }
 
     @Override
@@ -39,7 +36,7 @@ public class PlayerServiceDB implements PlayerService{
     }
 
     @Override
-    @CachePut(value="players", key="#player.id")
+    @CachePut(value="players", key="#player.ID")
     public void updatePlayer(Long id, Player player) {
         playerRepository.save(player);
     }
